@@ -9,6 +9,7 @@ public class Borrower
 {
     Loan[] 대출정보;
     private String name;
+    private int borrowerID;
     /**
      * Borrower 클래스의 객체 생성자
      */
