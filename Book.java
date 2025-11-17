@@ -19,5 +19,16 @@ public class Book
     {
         
     }
-
+    public boolean 대출가능한가(){
+        return false;
+    }
+    public boolean 대출중인가(){
+        return false;
+    }
+    public 책목록 대출중인책목록을요청한다(){
+    
+    }
+    public 책목록 대출가능한책목록을요청한다(){
+    
+    }
 }

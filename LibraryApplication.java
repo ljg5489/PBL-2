@@ -15,7 +15,7 @@ public class LibraryApplication
         
     }
     
-    public 화면에출력한다(){
+    public void 책목록조회(){
         
     }
     
