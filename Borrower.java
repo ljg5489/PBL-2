@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Borrower 클래스의 설명을 작성하세요.
  *
@@ -7,15 +7,17 @@
  */
 public class Borrower
 {
-    Loan[] 대출정보;
+    ArrayList<Loan> borrowInfo;
     private String name;
     private int borrowerID;
     /**
      * Borrower 클래스의 객체 생성자
      */
-    public Borrower()
+    public Borrower(String name, int borrowerID)
     {
-        
+        this.name = name;
+        this.borrowerID = borrowerID;
+        this.borrowInfo = new ArrayList<Loan>();
     }
 
     /**
@@ -24,8 +26,12 @@ public class Borrower
      * 
      * 
      */
-    public boolean 체크한다()
+    public boolean check()
     {
-        
+        if(this.borrowInfo.size()<10){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

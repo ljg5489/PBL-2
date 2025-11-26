@@ -1,4 +1,4 @@
-
+import java.util.Date;
 /**
  * Loan 클래스의 설명을 작성하세요.
  *
@@ -7,9 +7,11 @@
  */
 public class Loan
 {
-    Borrower[] 대출자;
-    Book[] 대출책;
-    private date 대출일시;
-    private date 반납일시;
+    Borrower borrower;
+    Book borroweedBook;   
+    private Date borrowDate;
+    private Date returnDate;
+    public Loan(Borrower u, Book b){
+    }
     
 }

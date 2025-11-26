@@ -7,7 +7,7 @@
  */
 public class Book
 {
-    Loan[] 대출내역;
+    Loan borrowList;
     private String title;
     private String author;
     private int bookID;
@@ -15,9 +15,21 @@ public class Book
      * Book 클래스의 객체 생성자
      *
      */
-    public Book()
+    public Book(String title, String author, int bookID)
     {
-        
+        this.title = title;
+        this.author = author;
+        this.bookID = bookID;
+        this.borrowList = null;
     }
-
+    public boolean check(){
+        if(this.borrowList == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void displayOneBook(){
+        System.out.println("제목 : " + title + " 저자 : " + author + " 책 고유번호 :" + bookID);
+    }
 }
