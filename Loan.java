@@ -11,4 +11,5 @@ public class Loan
     Book[] 대출책;
     private date 대출일시;
     private date 반납일시;
+    
 }
