@@ -7,7 +7,7 @@
  */
 public class Borrower
 {
-    Loan[] 대출정보;
+    Loan[] borrowInfo;
     private String name;
     private int borrowerID;
     /**
@@ -24,7 +24,7 @@ public class Borrower
      * 
      * 
      */
-    public boolean 체크한다()
+    public boolean check()
     {
         
     }

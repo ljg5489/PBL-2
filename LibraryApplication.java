@@ -8,18 +8,22 @@
 public class LibraryApplication
 {
     private String name;
-    Book[] 수장자료;
-    Borrower[] 이용자;
-    Loan[] 대출기록;
-    public 대출한다(){
+    public void registerOneBorrower(String name, int borrowerID){
         
     }
-    
-    public void 책목록조회(){
+    public void registerOneBoo(String title, String author, int bookID){
         
     }
-    
-    public 이용자를등록한다(name){
+    public void displayBooksForLoan(){
+        
+    }
+    public void displayBooksOnLoan(){
+        
+    }
+    public void borrowOneBook(String name, int bookID){
+        
+    }
+    public void returnOneBook(String name, int bookID){
         
     }
 }

@@ -7,8 +7,9 @@
  */
 public class Loan
 {
-    Borrower[] 대출자;
-    Book[] 대출책;
-    private date 대출일시;
-    private date 반납일시;
+    Borrower[] borrower;
+    Book[] borrowedBook;
+    private date borrowDate;
+    private date returnDate;
+    public Loan(Borrower u, Book b){}
 }
