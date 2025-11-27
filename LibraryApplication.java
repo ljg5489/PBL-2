@@ -11,11 +11,6 @@ public class LibraryApplication
     private BookDB bookDB;
     private BorrowerDB borrowerDB;
     private LoanDB loanDB;
-    public LibraryApplication(){
-        this.bookDB = new BookDB();
-        this.borrowerDB = new BorrowerDB();
-        this.loanDB = new LoanDB();
-    }
     public void registerOneBorrower(String name){
         int borrowerID = borrowerDB.checkSameName(name);
         Borrower borrower = new Borrower(name, borrowerID);

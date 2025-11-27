@@ -22,4 +22,7 @@ public class BookDB
     public void saveOneBook(Book b){
         bookList.add(b);
     }
+    public Book takeOneBook(){
+        
+    }
 }
