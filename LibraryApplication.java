@@ -28,18 +28,27 @@ public class LibraryApplication
     }
     public void displayBooksForLoan(){
         System.out.println("----- 대출 가능 도서 목록 -----");
-        for(Book b: ){
-            if(b.check()){
+        for(;; ){
+            b = BookDB.takeOneBook();
+            if(b.check()== true){
                 b.displayOneBook();
             }
+        }
+        if(){
+            System.out.println("대출 가능한 도서가 없습니다")
         }
     }
     public void displayBooksOnLoan(){
         System.out.println("----- 대출 중인 도서 목록 -----");
-        for(Book b : ){
+        for(;;){
+            b = bookDB.takeOneBOok();
             if(b.check() == false){
                 b.displayOneBook();
             }
+        }
+        if(){
+            System.out.println("대출 중인 도서가 없습니다")
+        
         }
     }
     public void borrowOneBook(String name, int bookID){
