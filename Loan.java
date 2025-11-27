@@ -8,10 +8,14 @@ import java.util.Date;
 public class Loan
 {
     Borrower borrower;
-    Book borroweedBook;   
-    private Date borrowDate;
-    private Date returnDate;
+    Book borrowedBook;   
+    Date borrowDate;
+    Date returnDate;
     public Loan(Borrower u, Book b){
+        this.borrower = u;
+        this.borrowedBook = b;
+        this.borrowDate = new Date();
+        this.returnDate = null;
     }
     
 }

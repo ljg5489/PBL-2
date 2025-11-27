@@ -7,9 +7,19 @@ import java.util.*;
  */
 public class BookDB
 {
-    
-    private TreeSet<Book> bookList;
-    public Book searchOneBook(Book b){}
-    public void saveOneBook(Book b){}
-    public Book takeOneBook(){}
+    TreeSet<Book> bookList;
+    public BookDB(){
+        this.bookList = new TreeSet<Book>();
+    }
+    public Book searchOneBook(int bookID){
+        for(Book b : bookList){
+            if(b.bookID == bookID){
+                return b;
+            }
+        }
+        return null;
+    }
+    public void saveOneBook(Book b){
+        bookList.add(b);
+    }
 }

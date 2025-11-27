@@ -8,8 +8,8 @@ import java.util.*;
 public class Borrower
 {
     ArrayList<Loan> borrowInfo;
-    private String name;
-    private int borrowerID;
+    String name;
+    int borrowerID;
     /**
      * Borrower 클래스의 객체 생성자
      */
@@ -28,10 +28,6 @@ public class Borrower
      */
     public boolean check()
     {
-        if(this.borrowInfo.size()<10){
-            return true;
-        }else{
-            return false;
-        }
+        return this.borrowInfo.size() < 10 ;
     }
 }

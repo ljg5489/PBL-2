@@ -8,6 +8,13 @@ import java.util.*;
 public class LoanDB
 {
     private LinkedList<Loan> loanList;
-    public void deleteOneLoan(Loan l){}
-    public void addOneLoan(Loan l){}
+    public LoanDB(){
+        this.loanList = new LinkedList<Loan>();
+    }
+    public void deleteOneLoan(Loan l){
+        loanList.add(l);
+    }
+    public void addOneLoan(Loan l){
+        loanList.remove(l);
+    }
 }

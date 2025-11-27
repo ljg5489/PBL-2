@@ -8,8 +8,28 @@ import java.util.ArrayList;
  */
 public class BorrowerDB
 {
-    private ArrayList<Borrower> borrowerList;
-    public Borrower searchOneBorrower(String name, int borrowerID){}
-    public int checkOneBorrower(String name){}
-    public void saveOneBorrower(Borrower u){}
+    ArrayList<Borrower> borrowerList;
+    public BorrowerDB(){
+        this.borrowerList = new ArrayList<Borrower>();
+    }
+    public Borrower searchOneBorrower(String name, int borrowerID){
+        for(Borrower u: borrowerList){
+            if(u.name.equals(name) && u.borrowerID == borrowerID){
+                return u;
+            }
+        }
+        return null;
+    }
+    public int checkSameName(String name){
+        int count = 0;
+        for(Borrower u : borrowerList){
+            if(u.name.equals(name)){
+                count++;
+            }
+        }
+        return count+1;
+    }
+    public void saveOneBorrower(Borrower u){
+        this.borrowerList.add(u);    
+    }
 }
