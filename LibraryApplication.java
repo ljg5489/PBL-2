@@ -35,7 +35,7 @@ public class LibraryApplication
             }
         }
         if(){
-            System.out.println("대출 가능한 도서가 없습니다")
+            System.out.println("대출 가능한 도서가 없습니다");
         }
     }
     public void displayBooksOnLoan(){
@@ -47,7 +47,7 @@ public class LibraryApplication
             }
         }
         if(){
-            System.out.println("대출 중인 도서가 없습니다")
+            System.out.println("대출 중인 도서가 없습니다");
         
         }
     }

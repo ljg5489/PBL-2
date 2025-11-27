@@ -31,6 +31,4 @@ public class Book
     public String toString(){
         return "제목 : " + title + " 저자 : " + author + " 책 고유번호 :" + bookID;
     }
-    
-    
 }
