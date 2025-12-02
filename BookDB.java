@@ -7,9 +7,9 @@ import java.util.*;
  */
 public class BookDB
 {
-    TreeSet<Book> bookList;
+    TreeSet<Book> book;
     public BookDB(){
-        this.bookList = new TreeSet<Book>();
+        this.book = new TreeSet<Book>();
     }
     public Book searchOneBook(int bookID){
         for(Book b : bookList){
