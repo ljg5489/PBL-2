@@ -8,6 +8,8 @@ import java.util.ArrayList;
  */
 public class BorrowerDB
 {
+    private Borrower number;
+    
     ArrayList<Borrower> borrowerList;
     public BorrowerDB(){
         this.borrowerList = new ArrayList<Borrower>();
