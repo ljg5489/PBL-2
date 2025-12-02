@@ -7,8 +7,6 @@ import java.util.*;
  */
 public class BookDB
 {
-    private Book book;
-    
     TreeSet<Book> bookList;
     public BookDB(){
         this.bookList = new TreeSet<Book>();
