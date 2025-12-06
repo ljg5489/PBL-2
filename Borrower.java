@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Borrower
 {
-    ArrayList<Loan> borrowInfo;
+    ArrayList<Loan> borrowInfo = new ArrayList<Loan>(10);
     String name;
     int borrowerID;
     /**
@@ -17,7 +17,7 @@ public class Borrower
     {
         this.name = name;
         this.borrowerID = borrowerID;
-        this.borrowInfo = new ArrayList<Loan>();
+        this.borrowInfo = new ArrayList<Loan>(10);
     }
 
     /**
