@@ -12,7 +12,9 @@ public class LibraryApplication
     private BorrowerDB borrowerDB;
     private LoanDB loanDB;
     public LibraryApplication(){
-        
+        BookDB = new BookDB();
+        BorrowerDB = new BorrowerDB();
+        LoanDB = new LoanDB();
     }
     public void registerOneBorrower(String name){
         int borrowerID = borrowerDB.checkSameName(name);
@@ -31,13 +33,13 @@ public class LibraryApplication
     }
     public void displayBooksForLoan(){
         System.out.println("----- 대출 가능 도서 목록 -----");
-        for(;; ){
+        for(;;){
             b = BookDB.takeOneBook();
             if(b.check()== true){
                 b.displayOneBook();
             }
         }
-        if(){
+        if(    ){
             System.out.println("대출 가능한 도서가 없습니다");
         }
     }

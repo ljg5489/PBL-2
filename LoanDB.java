@@ -7,14 +7,14 @@ import java.util.*;
  */
 public class LoanDB
 {
-    private LinkedList<Loan> loanList;
+    private LinkedList<Loan> loan;
     public LoanDB(){
-        this.loanList = new LinkedList<Loan>();
+        this.loan = new LinkedList<Loan>();
     }
     public void deleteOneLoan(Loan l){
-        loanList.add(l);
+        loan.remove(l);
     }
     public void addOneLoan(Loan l){
-        loanList.remove(l);
+        loan.add(l);
     }
 }

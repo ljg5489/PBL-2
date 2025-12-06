@@ -7,12 +7,13 @@ import java.util.*;
  */
 public class BookDB
 {
-    TreeSet<Book> bookList;
+    TreeSet<Book> book;
+    private Iterator<Book> iterator = null;
     public BookDB(){
-        this.bookList = new TreeSet<Book>();
+        this.book = new TreeSet<Book>();
     }
     public Book searchOneBook(int bookID){
-        for(Book b : bookList){
+        for(Book b : book){
             if(b.bookID == bookID){
                 return b;
             }
@@ -20,9 +21,17 @@ public class BookDB
         return null;
     }
     public void saveOneBook(Book b){
-        bookList.add(b);
+        book.add(b);
     }
-    public Book takeOneBook(){
-        
+    public Book takeOneBook() {
+        if (iterator == null) {
+            iterator = book.iterator();
+        }
+        if (iterator.hasNext()) {
+            return iterator.next();
+        } else {
+            iterator = null; 
+            return null;
+        }
     }
 }
