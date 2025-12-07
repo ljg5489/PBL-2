@@ -8,6 +8,7 @@
 public class Book
 {
     Loan borrowList;
+    
     String title;
     String author;
     int bookID;
