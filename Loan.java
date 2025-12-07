@@ -18,4 +18,7 @@ public class Loan
         this.returnDate = null;
     }
     
+    public Date getReturnDate(){
+        return this.returnDate;
+    }
 }
