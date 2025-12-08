@@ -82,7 +82,7 @@ public class MyPanel extends JPanel implements ActionListener
         }
         else if(index == 4 && e.getSource().equals(mb_Run)){
             int id = Integer.parseInt(mtf_BookID.getText());
-            String outputTitle = libApp.borrowOneBook(mtf_BorrowerName.getText(), id);
+            String outputTitle = libApp.loanOneBook(mtf_BorrowerName.getText(), id);
             mta.append(outputTitle + "\n" + output);
         }
         else if(index == 5 && e.getSource().equals(mb_Run)){

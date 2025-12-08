@@ -73,7 +73,7 @@ public class LibraryApplication
         return sb.toString();
     }
     
-    public String borrowOneBook(String name, int bookID){
+    public String loanOneBook(String name, int bookID){
         Borrower borrower = borrowerDB.searchOneBorrower(name);
         
         if (borrower == null) {
