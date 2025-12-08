@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Loan 객체를 저장할 수 있는 DB역할을 하는 클래스 
  *
- * @author (2022320005 이진규)
+ * @author (2022320005 이진규, 2022320009 이상원, 2024320060 전채금)
  * @version (2025.12.08)
  */
 public class LoanDB 

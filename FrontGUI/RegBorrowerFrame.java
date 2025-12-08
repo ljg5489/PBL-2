@@ -4,7 +4,7 @@ import javax.swing.*;
 /**
  * RegUserFrame 클래스: 이용자 등록 기능을 위한 프레임
  *
- * @author (2024320060 전채금)
+ * @author (2022320005 이진규, 2022320009 이상원, 2024320060 전채금)
  * @version (2025.12.03)
  */
 public class RegBorrowerFrame extends JFrame
