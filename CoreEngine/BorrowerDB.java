@@ -10,6 +10,9 @@ import java.util.ArrayList;
 public class BorrowerDB
 {
     private ArrayList<Borrower> borrower;
+    /**
+     * BorrowerDB 클래스의 객체 생성자
+     */
     public BorrowerDB(){
         this.borrower = new ArrayList<Borrower>();
     }

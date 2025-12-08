@@ -5,9 +5,10 @@ import java.util.Date;
 import java.util.Calendar;
 /** 
  * Loan 클래스의 설명을 작성하세요.
+ * 대출 객체를 생성하는 클래스
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320005 이진규, 2022320009 이상원, 2024320060 전채금)
+ * @version (2025.12.8)
  */
 public class Loan
 {
@@ -16,6 +17,10 @@ public class Loan
     protected Date borrowDate;
     protected Date returnDate;
     protected Date actualReturnDate;
+    /**
+     *  Loan 클래스의 객체 생성자. 속성 초기화 및 대출일, 반납일 설정
+     * 
+     */
     public Loan(Borrower borrower, Book book){
         this.borrower = borrower;
         this.borrowedBook = book;

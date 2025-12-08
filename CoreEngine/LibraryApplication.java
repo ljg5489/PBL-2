@@ -3,12 +3,11 @@ import java.util.*;
 
 /**
  * LibraryApplication 클래스
- *
+ * 이용자 등록, 책 등록, 대출 가능한 책 표시, 대출 중인 책 표시, 대출, 반납의 기능을 수행하는 
+ * 클래스
  * 
  *
- * 
- *
- * @author (2022320005 이진규, 2022320009 이상원)
+ * @author (2022320005 이진규, 2022320009 이상원, 2024320060 전채금)
  * @version (2025.12.2)
  */
 public class LibraryApplication
@@ -17,14 +16,23 @@ public class LibraryApplication
     private BookDB bookDB;
     private BorrowerDB borrowerDB;
     private LoanDB loanDB;
-    
+    /**
+     * LibraryApplication 클래스의 객체 생성자. 
+     * 각 객체의 DB를 생성, 해당 어플리케이션의 이름을 초기화.
+     * 
+     */
     public LibraryApplication(String name){
         this.name = name;
         bookDB = new BookDB();
         borrowerDB = new BorrowerDB();
         loanDB = new LoanDB();
     }
-    
+    /**
+     * 새로운 이용자를 등록하는 메소드
+     *
+     * @param 등록하려는 이용자의 이름
+     * @return 같은 이름의 이용자가 있다면 오류메시지, 아니라면 등록 완료 메시지 리턴
+     */
     public String registerOneBorrower(String name){
         boolean result = borrowerDB.checkSameName(name);
         if (result == true){
@@ -36,7 +44,12 @@ public class LibraryApplication
             return "이용자 등록 완료 : " + name;
         }   
     }
-    
+    /**
+     * 새로운 책을 등록하는 메소드
+     *
+     * @param  등록하려는 책의 제목, 저자, 고유번호
+     * @return 같은 이름의 책이 있다면 오류메시지, 아니라면 등록 완료 메시지 리턴
+     */
     public String registerOneBook(String title, String author, int bookID){
         boolean result = bookDB.checkSameName(title);
         if (result == true ) {
@@ -48,7 +61,12 @@ public class LibraryApplication
             return "책 등록 완료 :" + book;
         }
     }
-    
+    /**
+     * 대출 가능한 책을 표시하는 메소드
+     *
+     * @param 
+     * @return 대출 가능한 책의 정보 리턴
+     */
     public String displayBooksForLoan(){
         StringBuilder sb = new StringBuilder();
         sb.append("----- 대출 가능 도서 목록 -----\n");
@@ -60,7 +78,12 @@ public class LibraryApplication
         }
         return sb.toString();
     }
-    
+    /**
+     * 대출 중인 책을 표시하는 메소드
+     *
+     * @param 
+     * @return 대출 중인 책의 정보 리턴
+     */
     public String displayBooksOnLoan(){
         StringBuilder sb = new StringBuilder();
         sb.append("----- 대출 중인 도서 목록 -----\n");
@@ -72,7 +95,14 @@ public class LibraryApplication
         }
         return sb.toString();
     }
-    
+    /**
+     * 대출을 진행하는 메소드. 
+     * 이용자와 책이 등록되어있는지, 대출 한도를 넘지 않고 연체 패널티가 없는 이용자인지,
+     * 대출 중이지 않은 책인지 확인 후에 대출 진행
+     *
+     * @param 대출을 진행하려는 이용자의 이름과 책의 고유번호
+     * @return 대출이 불가능하다면 오류메시지, 대출이 가능하면 대출 완료 메시지 리턴
+     */
     public String loanOneBook(String name, int bookID){
         Borrower borrower = borrowerDB.searchOneBorrower(name);
         
@@ -99,7 +129,14 @@ public class LibraryApplication
         
         return "대출이 완료되었습니다. \n" + borrower + "\n" + book;
     }
-    
+    /**
+     * 반납을 진행하는 메소드.
+     * 이용자와 책이 등록되어 있는지, 반납 가능한 책인지 확인 후 반납 과정 진행 및 
+     * 반납일을 지났다면 연체 패널티를 부과함
+     *
+     * @param 반납을 진행하려는 이용자의 이름과 책의 고유번호
+     * @return 반납이 불가능하다면 오류메시지, 반납이 가능하면 반납 완료 메시지 리턴
+     */
     public String returnOneBook(String name, int bookID){
         Borrower borrower = borrowerDB.searchOneBorrower(name);
         Book book = bookDB.searchOneBook(bookID);
