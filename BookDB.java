@@ -13,11 +13,11 @@ public class BookDB
         this.book = new TreeSet<Book>();
     }
     public Book searchOneBook(int bookID){
-        for(Book b : book){
+        for(Book b : book){ 
             if(b.bookID == bookID){
                 return b;
             }
-        }
+        } 
         return null;
     }
     public void saveOneBook(Book b){
@@ -33,5 +33,13 @@ public class BookDB
             iterator = null; 
             return null;
         }
+    }
+    public boolean checkSameName(String title){
+        for(Book b : book){
+            if(b.title.equals(title)){
+                return true;
+            }
+        }
+        return false;
     }
 }
