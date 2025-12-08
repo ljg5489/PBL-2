@@ -41,7 +41,7 @@ public class LibraryApplication
         else{
             Borrower borrower = new Borrower(name);
             borrowerDB.saveOneBorrower(borrower);
-            return "이용자 등록 완료 : " + name;
+            return "이용자 등록 완료 : ";
         }   
     }
     /**
@@ -58,7 +58,7 @@ public class LibraryApplication
         else{
             Book book = new Book(title, author, bookID);
             bookDB.saveOneBook(book);
-            return "책 등록 완료 :" + book;
+            return "책 등록 완료 :";
         }
     }
     /**

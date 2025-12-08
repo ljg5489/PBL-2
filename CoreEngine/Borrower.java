@@ -14,7 +14,6 @@ public class Borrower
     ArrayList<Loan> borrowInfo = new ArrayList<Loan>(10);
     protected String name;
     protected Date penaltyEndDate;
-    protected Date today = new Date();
     /**
      * Borrower 클래스의 객체 생성자. 미대출 상태로 설정, 속성 초기화 진행.
      */
@@ -44,10 +43,12 @@ public class Borrower
      * @return 아직 연체 패널티를 가지고 있다면 true, 아니라면 false 리턴
      */
     public boolean checkOverdueBook(){
-        if(today.after(penaltyEndDate)){
-            return true;
+        if (penaltyEndDate == null) {
+            return true;  
         }
-        else{return false;}
+        
+        Date today = new Date();  
+        return !today.after(penaltyEndDate);
     }
     /**
      * Object 클래스의 메소드 String toString() 오버라이딩
