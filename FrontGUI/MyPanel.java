@@ -15,8 +15,8 @@ public class MyPanel extends JPanel implements ActionListener
     protected JPanel buttonPanel;
     protected JPanel outputDataPanel;
     private LibraryApplication libApp;
-    protected JLabel ml_BorrowerName, ml_BookTitle, ml_BookAuthor, ml_BookID;
-    protected JTextField mtf_BorrowerName, mtf_BookTitle, mtf_BookAuthor, mtf_BookID;
+    protected JLabel ml_BorrowerName, ml_BookID;
+    protected JTextField mtf_BorrowerName, mtf_BookID;
     protected JButton mb_Run;
     protected JTextArea mta;
     protected String[] loanORreturn = {"이용자 등록", "책 등록", "대출가능한 책 목록", 
@@ -26,22 +26,14 @@ public class MyPanel extends JPanel implements ActionListener
     protected int index;
     public MyPanel(){
         ml_BorrowerName = new JLabel("이용자 이름");
-        ml_BookTitle = new JLabel("   책 제목    ");
-        ml_BookAuthor = new JLabel("책 저자이름");
         ml_BookID = new JLabel("책 등록번호");
     
         mtf_BorrowerName = new JTextField("Your Name", 20);
-        mtf_BookTitle = new JTextField("Book Title", 20);
-        mtf_BookAuthor= new JTextField("Book Author", 20);
         mtf_BookID = new JTextField("Book ID", 20);
         mcb_loanORreturn = new JComboBox(loanORreturn);
-        this.libApp = new LibraryApplication("선문대학교 중앙도서관");
+        this.libApp = new LibraryApplication("A시립 도서관");
         this.add(ml_BorrowerName);
         this.add(mtf_BorrowerName);
-        this.add(ml_BookTitle);
-        this.add(mtf_BookTitle);
-        this.add(ml_BookAuthor);
-        this.add(mtf_BookAuthor);
         this.add(ml_BookID);
         this.add(mtf_BookID);
         this.add(new JLabel("선택"));
