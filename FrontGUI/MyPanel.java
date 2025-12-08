@@ -24,6 +24,12 @@ public class MyPanel extends JPanel implements ActionListener
     protected JComboBox mcb_loanORreturn;
     protected String output = "";
     protected int index;
+    /**
+     * main panel이 되는 MyPanel의 생성자
+     *
+     * 
+     * 
+     */
     public MyPanel(){
         ml_BorrowerName = new JLabel("이용자 이름");
         ml_BookID = new JLabel("책 등록번호");
@@ -50,7 +56,13 @@ public class MyPanel extends JPanel implements ActionListener
         
 
     }
-
+    
+    /**
+     * 항목 선택 후 버튼을 눌렀을 시의 상호작용에 관한 메소드
+     *
+     * @param  발생하는 ActionEvent
+     * 
+     */
     public void actionPerformed(ActionEvent e){
 
         if(e.getSource().equals(mcb_loanORreturn)){
