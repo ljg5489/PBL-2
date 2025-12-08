@@ -12,6 +12,8 @@ public class Borrower
 {
     ArrayList<Loan> borrowInfo = new ArrayList<Loan>(10);
     String name;
+    Date penaltyEndDate;
+    Date today = new Date();
     /**
      * Borrower 클래스의 객체 생성자
      */
@@ -19,6 +21,7 @@ public class Borrower
     {
         this.name = name;
         this.borrowInfo = new ArrayList<Loan>(10);
+        this.penaltyEndDate = null;
     }
 
     /**
@@ -30,13 +33,16 @@ public class Borrower
     public boolean check()
     {
         if(this.borrowInfo.size() < 10){
+        return true;}
+        else{return false;}
+    }
+    public boolean checkOverdueBook(){
+        if(today.after(penaltyEndDate)){
             return true;
         }
-        else{
-            return false;
-        }
+        else{return false;}
     }
     public String toString(){
         return "이름 : " + name;
     }
-}
+    }

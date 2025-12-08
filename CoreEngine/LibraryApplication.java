@@ -1,5 +1,5 @@
 package CoreEngine;
-import java.util.Date;
+import java.util.*;
 
 /**
  * LibraryApplication 클래스
@@ -80,9 +80,11 @@ public class LibraryApplication
             return "등록되지 않은 이용자입니다: " + name;
         }
         if (borrower.check() == false) {
-            return "대출 한도 초과이거나 대출 불가 이용자입니다.";
+            return "대출 한도를 초과한 이용자입니다.";
         }
-        
+        if(borrower.checkOverdueBook() == false){
+            return "연체로 인해 대출이 불가능한 이용자입니다.";
+        }
         Book book = bookDB.searchOneBook(bookID);
         
         if (book == null) {
@@ -116,7 +118,14 @@ public class LibraryApplication
             book.borrowList = null;
             loan.actualReturnDate = new Date();
             loanDB.deleteOneLoan(loan);
-            
+             if(loan.actualReturnDate.after(loan.returnDate)){
+                long diff = loan.actualReturnDate.getTime() - loan.returnDate.getTime();
+                long overDueDate = diff/ (1000 * 60 * 60 * 24);
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(loan.actualReturnDate); 
+                calendar.add(Calendar.DATE, (int)overDueDate); 
+                borrower.penaltyEndDate = calendar.getTime();
+            }
             return "반납이 완료되었습니다. \n"+ borrower+ "\n" + book;
         }
         else{
