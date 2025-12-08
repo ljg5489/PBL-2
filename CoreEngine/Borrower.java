@@ -48,7 +48,12 @@ public class Borrower
         }
         
         Date today = new Date();  
-        return !today.after(penaltyEndDate);
+        if (today.before(penaltyEndDate)) {
+        return false;  
+        } 
+        else {
+        return true;   
+        }
     }
     /**
      * Object 클래스의 메소드 String toString() 오버라이딩
