@@ -4,8 +4,8 @@ import javax.swing.*;
 /**
  * RegBookFrame 클래스: 책 등록을 위한 프레임
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2022320005 이진규, 2022320009 이상원, 2024320060 전채금)
+ * @version (2025.12.2)
  */
 public class RegBookFrame extends JFrame
 {
