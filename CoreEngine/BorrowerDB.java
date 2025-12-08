@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class BorrowerDB
 {
-    ArrayList<Borrower> borrower;
+    private ArrayList<Borrower> borrower;
     public BorrowerDB(){
         this.borrower = new ArrayList<Borrower>();
     }

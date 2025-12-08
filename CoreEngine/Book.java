@@ -8,9 +8,9 @@ package CoreEngine;
 public class Book implements Comparable<Book>
 {
     Loan borrowList;
-    String title;
-    String author; 
-    int bookID;
+    protected String title;
+    protected String author; 
+    protected int bookID;
     /**
      * Book 클래스의 객체 생성자
      *

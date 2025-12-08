@@ -11,9 +11,9 @@ import java.util.*;
 public class Borrower
 {
     ArrayList<Loan> borrowInfo = new ArrayList<Loan>(10);
-    String name;
-    Date penaltyEndDate;
-    Date today = new Date();
+    protected String name;
+    protected Date penaltyEndDate;
+    protected Date today = new Date();
     /**
      * Borrower 클래스의 객체 생성자
      */

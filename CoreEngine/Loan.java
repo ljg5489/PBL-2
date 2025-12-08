@@ -13,9 +13,9 @@ public class Loan
 {
     private Borrower borrower;
     private Book borrowedBook;   
-    Date borrowDate;
-    Date returnDate;
-    Date actualReturnDate;
+    protected Date borrowDate;
+    protected Date returnDate;
+    protected Date actualReturnDate;
     public Loan(Borrower borrower, Book book){
         this.borrower = borrower;
         this.borrowedBook = book;

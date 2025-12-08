@@ -8,8 +8,8 @@ import java.util.*;
  */
 public class BookDB
 {
-    TreeSet<Book> book;
-    private Iterator<Book> iterator = null;
+    protected TreeSet<Book> book;
+    protected Iterator<Book> iterator = null;
     public BookDB(){
         this.book = new TreeSet<Book>();
     }
