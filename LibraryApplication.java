@@ -13,9 +13,9 @@ public class LibraryApplication
     private LoanDB loanDB;
 
     public LibraryApplication(){
-        BookDB = new BookDB();
-        BorrowerDB = new BorrowerDB();
-        LoanDB = new LoanDB();
+        bookDB = new BookDB();
+        borrowerDB = new BorrowerDB();
+        loanDB = new LoanDB();
     }
 
     //UC1 이용자 1명 등록
@@ -48,13 +48,13 @@ public class LibraryApplication
     public void displayBooksForLoan(){
         System.out.println("----- 대출 가능 도서 목록 -----");
         for(;;){
-            b = BookDB.takeOneBook();
+            Book b = bookDB.takeOneBook();
             if(b.check()== true){
                 b.displayOneBook();
                 exist = true;
             }
         }
-        if( ){
+        if(b== null){
             System.out.println("대출 가능한 도서가 없습니다");
         }
     }
@@ -69,7 +69,7 @@ public class LibraryApplication
                 exist = true;
             }
         }
-        if(){
+        if(b == null){
             System.out.println("대출 중인 도서가 없습니다");
         }
     }
@@ -104,7 +104,6 @@ public class LibraryApplication
     public void returnOneBook(String name, int bookID){
         Borrower borrower = borrowerDB.searchOneBorrower(name);
         Book book = bookDB.searchOneBook(bookID);
-
         borrower.borrowInfo.remove(loan);
         borrower.borrowInfo.remove(loan);
         book.borrowList = null;

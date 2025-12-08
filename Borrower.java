@@ -13,10 +13,9 @@ public class Borrower
     /**
      * Borrower 클래스의 객체 생성자
      */
-    public Borrower(String name, int borrowerID)
+    public Borrower(String name)
     {
         this.name = name;
-        this.borrowerID = borrowerID;
         this.borrowInfo = new ArrayList<Loan>(10);
     }
 
