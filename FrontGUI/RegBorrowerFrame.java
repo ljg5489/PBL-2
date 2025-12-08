@@ -1,5 +1,5 @@
 package FrontGUI;
-
+import CoreEngine.*;
 import javax.swing.*;
 /**
  * RegUserFrame 클래스: 이용자 등록 기능을 위한 프레임
@@ -9,12 +9,12 @@ import javax.swing.*;
  */
 public class RegBorrowerFrame extends JFrame
 {
-    public RegBorrowerFrame(){
+    public RegBorrowerFrame(LibraryApplication app){
         this.setTitle("도서관 관리 시스템");
         this.setSize(297, 550);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
         
-        this.add(new RegBorrowerPanel());
+        this.add(new RegBorrowerPanel(app));
     }
 }

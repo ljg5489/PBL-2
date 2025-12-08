@@ -16,8 +16,9 @@ public class RegBorrowerPanel extends JPanel implements ActionListener
     protected JTextField mtf_BorrowerName;
     protected JButton mb_BorrowerRegister;
     protected JTextArea mta;
-    
-    public RegBorrowerPanel(){
+    private LibraryApplication libApp;
+    public RegBorrowerPanel(LibraryApplication app){
+        this.libApp = app;
         ml_BorrowerName = new JLabel("");
         mtf_BorrowerName = new JTextField("이름을 입력하세요", 20);
         
@@ -34,7 +35,6 @@ public class RegBorrowerPanel extends JPanel implements ActionListener
     }
     
     public void actionPerformed(ActionEvent e) {
-        LibraryApplication libApp = new LibraryApplication("선문대학교 중앙도서관");
         
         String borrowerName = mtf_BorrowerName.getText();
         String outputTitle = libApp.registerOneBorrower(borrowerName);

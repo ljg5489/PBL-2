@@ -32,7 +32,7 @@ public class Book implements Comparable<Book>
         System.out.println(this.toString());
     }
     public String toString(){
-        return "제목 : " + title + " 저자 : " + author + " 책 고유번호 :" + bookID;
+        return "제목 : " + title + "\n 저자 : " + author + "\n 책 고유번호 :" + bookID;
     }
     public int compareTo(Book other) {
         if (this.bookID < other.bookID) {

@@ -1,5 +1,5 @@
 package FrontGUI;
-
+import CoreEngine.*;
 import javax.swing.*;
 /**
  * RegBookFrame 클래스: 책 등록을 위한 프레임
@@ -9,12 +9,11 @@ import javax.swing.*;
  */
 public class RegBookFrame extends JFrame
 {
-    public RegBookFrame(){
+    public RegBookFrame(LibraryApplication app){
         this.setTitle("도서관 관리 시스템");
         this.setSize(297, 550);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
-        
-        this.add(new RegBookPanel());
+        this.add(new RegBookPanel(app));
     }
 }

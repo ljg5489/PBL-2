@@ -86,7 +86,7 @@ public class LibraryApplication
         Book book = bookDB.searchOneBook(bookID);
         
         if (book == null) {
-            return "등록되지 않은 책입니다: ID " + bookID;
+            return "등록되지 않은 책입니다.";
         }
         if (book.check() == false) {
             return "이미 대출 중인 책입니다.";
@@ -95,7 +95,7 @@ public class LibraryApplication
         Loan loan = new Loan(borrower, book);
         loanDB.addOneLoan(loan);
         
-        return "대출 성공: " + borrower.name + "->" + book;
+        return "대출이 완료되었습니다. \n" + borrower + "\n" + book;
     }
     
     public String returnOneBook(String name, int bookID){
@@ -103,7 +103,7 @@ public class LibraryApplication
         Book book = bookDB.searchOneBook(bookID);
         
         if (borrower == null){ 
-            return "등록되지 않은 이용자입니다.";
+            return "등록되지 않은 이용자입니다." + name;
         }
         if (book == null){
             return "등록되지 않은 책입니다.";   
@@ -117,7 +117,7 @@ public class LibraryApplication
             loan.actualReturnDate = new Date();
             loanDB.deleteOneLoan(loan);
             
-            return "반납 성공: " + borrower.name + "->" + book;
+            return "반납이 완료되었습니다. \n"+ borrower+ "\n" + book;
         }
         else{
             return "대출 중인 책이 아닙니다.";
