@@ -17,6 +17,12 @@ public class RegBorrowerPanel extends JPanel implements ActionListener
     protected JButton mb_BorrowerRegister;
     protected JTextArea mta;
     private LibraryApplication libApp;
+    /**
+     * RegBorrowerPanel 클래스의 객체 생성자. 
+     * 이용자 등록창의 패널을 담당함.
+     * 
+     * 
+     */
     public RegBorrowerPanel(LibraryApplication app){
         this.libApp = app;
         ml_BorrowerName = new JLabel("");
@@ -33,7 +39,12 @@ public class RegBorrowerPanel extends JPanel implements ActionListener
         
         mb_BorrowerRegister.addActionListener(this);
     }
-    
+    /**
+     * 이용자 이름 입력 후 버튼 입력 시 이용자 등록을 진행.
+     *
+     * @param  발생하는 ActionEvent
+     * 
+     */
     public void actionPerformed(ActionEvent e) {
         
         String borrowerName = mtf_BorrowerName.getText();

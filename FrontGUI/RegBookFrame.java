@@ -9,6 +9,11 @@ import javax.swing.*;
  */
 public class RegBookFrame extends JFrame
 {
+    /**
+     * 책 등록창의 Frame이 되는 RegBookFrame의 생성자
+     *
+     * 
+     */
     public RegBookFrame(LibraryApplication app){
         this.setTitle("도서관 관리 시스템");
         this.setSize(297, 550);

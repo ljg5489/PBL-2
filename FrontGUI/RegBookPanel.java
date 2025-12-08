@@ -21,7 +21,12 @@ public class RegBookPanel extends JPanel implements ActionListener
     protected JTextArea mta;
     protected String output = "";
     protected int index;
-
+    /**
+     * RegBookPanel 클래스의 객체 생성자. 
+     * 책 등록창의 패널을 담당함.
+     * 
+     * 
+     */
     public RegBookPanel(LibraryApplication app){
         ml_BookTitle = new JLabel("책 제목");
         ml_BookAuthor = new JLabel("책 저자이름");
@@ -47,7 +52,12 @@ public class RegBookPanel extends JPanel implements ActionListener
         mb_BorrowerResister.addActionListener(this);
 
     }
-
+    /**
+     * 책의 정보 입력 후 버튼 입력 시 첵 등록을 진행.
+     *
+     * @param  발생하는 ActionEvent
+     * 
+     */
     public void actionPerformed(ActionEvent e){
         int id = Integer.parseInt(mtf_BookID.getText());
         String outputTitle = libApp.registerOneBook(mtf_BookTitle.getText(),mtf_BookAuthor.getText(), id);

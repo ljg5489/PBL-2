@@ -9,6 +9,11 @@ import javax.swing.*;
  */
 public class RegBorrowerFrame extends JFrame
 {
+    /**
+     * 이용자 등록창의 Frame이 되는 RegBorrowerFrame의 생성자
+     *
+     * 
+     */
     public RegBorrowerFrame(LibraryApplication app){
         this.setTitle("도서관 관리 시스템");
         this.setSize(297, 550);
