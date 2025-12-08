@@ -50,8 +50,8 @@ public class RegBookPanel extends JPanel implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         LibraryApplication libApp = new LibraryApplication("선문대학교 중앙도서관");
-        
-        String outputTitle = libApp.registerOneBook(mtf_BookTitle.getText(),mtf_BookAuthor.getText(),mtf_BookID.getText());
+        int id = Integer.parseInt(mtf_BookID.getText());
+        String outputTitle = libApp.registerOneBook(mtf_BookTitle.getText(),mtf_BookAuthor.getText(), id);
         output =  "책 제목 : " + mtf_BookTitle.getText() + "\n"
             + "책 저자 : " + mtf_BookAuthor.getText() + "\n"
             + "책 등록번호 : " + mtf_BookID.getText() + "\n"

@@ -80,15 +80,15 @@ public class MyPanel extends JPanel implements ActionListener
             RegBookFrame rbf = new RegBookFrame();
         }
         else if(index == 2 && e.getSource().equals(mb_Run)){
-            String outputTitle = libApp.displayBookForLoan();
+            String outputTitle = libApp.displayBooksForLoan();
             mta.append(outputTitle + "\n");
         }
         else if(index == 3 && e.getSource().equals(mb_Run)){
-            String outputTitle = libApp.displayBookOnLoan();
+            String outputTitle = libApp.displayBooksOnLoan();
             mta.append(outputTitle + "\n");
         }
         else if(index == 4 && e.getSource().equals(mb_Run)){
-            String outputTitle = libApp.loanOneBook(mtf_BorrowerName.getText(), mtf_BookID.getText());
+            String outputTitle = libApp.borrowOneBook(mtf_BorrowerName.getText(), mtf_BookID.getText());
             mta.append(outputTitle + "\n" + output);
         }
         else if(index == 5 && e.getSource().equals(mb_Run)){
